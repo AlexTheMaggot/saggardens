@@ -49,6 +49,7 @@ a {
   transform-origin: 821px 489px;
 }
 .progress__title {
+  text-align: center;
   color: #FFFFFF;
 }
 .progress__mail {
