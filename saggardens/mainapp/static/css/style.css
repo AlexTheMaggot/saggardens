@@ -80,4 +80,16 @@ a {
     transform: rotate(720deg);
   }
 }
+.logo__svg {
+  width: 100%;
+}
+.logo__path {
+  fill: #FFFFFF;
+}
+.feature__svg {
+  height: 60px;
+}
+.feature__path {
+  fill: #844D15;
+}
 /*# sourceMappingURL=style.css.map */
