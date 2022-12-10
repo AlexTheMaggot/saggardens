@@ -4,5 +4,12 @@ from django.shortcuts import render
 
 
 def index(request):
-    template = 'mainapp/index.html'
+    if '/en/' in request.path:
+        template = 'mainapp/index_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/index_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/index_uzc.html'
+    else:
+        template = 'mainapp/index_ru.html'
     return render(request, template)
