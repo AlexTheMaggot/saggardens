@@ -557,29 +557,6 @@ $(function () {
 
     $('#contact-form').validator();
 
-    $('#contact-form').on('submit', function (e) {
-        if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
-
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(this).serialize(),
-                success: function (data)
-                {
-                    var messageAlert = 'alert-' + data.type;
-                    var messageText = data.message;
-
-                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                    if (messageAlert && messageText) {
-                        $('#contact-form').find('.messages').html(alertBox);
-                        $('#contact-form')[0].reset();
-                    }
-                }
-            });
-            return false;
-        }
-    })
 });
 
 
@@ -957,6 +934,41 @@ $(function () {
       var $form = $(this)
       Plugin.call($form, $form.data())
     })
+    if (window.location.pathname.indexOf('/en/') !== -1) {
+        let path, new_path;
+        path = window.location.pathname;
+        new_path = path.replace('/en/', '');
+        $('#header_language_en').attr('href', path);
+        $('#header_language_uzl').attr('href', '/uzl/' + new_path);
+        $('#header_language_uzc').attr('href', '/uzc/' + new_path);
+        $('#header_language_ru').attr('href', '/' + new_path);
+    }
+    else if (window.location.pathname.indexOf('/uzc/') !== -1) {
+        let path, new_path;
+        path = window.location.pathname;
+        new_path = path.replace('/uzc/', '');
+        $('#header_language_uzc').attr('href', path);
+        $('#header_language_uzl').attr('href', '/uzl/' + new_path);
+        $('#header_language_en').attr('href', '/en/' + new_path);
+        $('#header_language_ru').attr('href', '/' + new_path);
+    }
+    else if (window.location.pathname.indexOf('/uzl/') !== -1) {
+        let path, new_path;
+        path = window.location.pathname;
+        new_path = path.replace('/uzl/', '');
+        $('#header_language_uzl').attr('href', path);
+        $('#header_language_uzc').attr('href', '/uzc/' + new_path);
+        $('#header_language_en').attr('href', '/en/' + new_path);
+        $('#header_language_ru').attr('href', '/' + new_path);
+    }
+    else {
+        let path;
+        path = window.location.pathname;
+        $('#header_language_ru').attr('href', path);
+        $('#header_language_en').attr('href', '/en' + path);
+        $('#header_language_uzc').attr('href', '/uzc' + path);
+        $('#header_language_uzl').attr('href', '/uzl' + path);
+    }
   })
 
 }(jQuery);

@@ -80,16 +80,27 @@ a {
     transform: rotate(720deg);
   }
 }
-.logo__svg {
-  width: 100%;
-}
-.logo__path {
-  fill: #FFFFFF;
-}
 .feature__svg {
   height: 60px;
 }
 .feature__path {
   fill: #844D15;
+}
+.footer__link {
+  color: #CCCCCC;
+  transition: all 0.4s;
+}
+.footer__link:hover {
+  color: #EEC344;
+}
+.lang__img {
+  height: 15px;
+  width: auto;
+}
+.lang__dropdown {
+  padding: 23px 0 !important;
+}
+.partner__img {
+  height: 200px;
 }
 /*# sourceMappingURL=style.css.map */

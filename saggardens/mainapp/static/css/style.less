@@ -1,4 +1,6 @@
 @white: #FFFFFF;
+@yellow: #EEC344;
+@gray-light: #CCCCCC;
 body {
   margin: 0;
 }
@@ -77,20 +79,35 @@ p, h1, h2, h3, h4, h5, h6, a {
   }
 }
 
-.logo{
-  &__svg {
-    width: 100%;
-  }
-  &__path {
-    fill: @white;
-  }
-}
-
 .feature {
   &__svg {
     height: 60px;
   }
   &__path {
     fill: #844D15;
+  }
+}
+
+.footer__link {
+  color: @gray-light;
+  transition: all 0.4s;
+  &:hover {
+    color: @yellow;
+  }
+}
+
+.lang {
+  &__img {
+    height: 15px;
+    width: auto;
+  }
+  &__dropdown {
+    padding: 23px 0 !important;
+  }
+}
+
+.partner {
+  &__img {
+    height: 200px;
   }
 }
