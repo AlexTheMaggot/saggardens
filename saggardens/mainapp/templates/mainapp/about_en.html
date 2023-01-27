@@ -1,0 +1,55 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - About{% endblock %}
+{% block description %}Sag Gardens - About{% endblock %}
+{% block keywords %}Sag Gardens - About{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_en.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>About</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_en:index' %}">Home</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_en:about' %}">About</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+                <div class="col-lg-7 col-mt-lg">
+                    <div class="about-agroly-info">
+                        <h5>Sag Gardens</h5>
+                        <h2>Information <br /><span class="light-text">about company</span></h2>
+                        <p>The SAG Corporation, which began its activities in 2000, this year implemented the Sag Gardens project. The fact that 1,258,900 seedlings of walnuts and almonds planted 4 years ago on more than 6,000 hectares of land began to bear fruit in the past year laid a solid foundation for the implementation of this project, mainly oriented to export. The limited liability company "Sag Agro Logistics", created under the corporation, which is intended for the export of various fruit products abroad under the brand name "Sag Gardens", is currently engaged in the processing and export of various types of fruit products grown in the Republic of Uzbekistan, in particular walnut Chandler, whose seedlings were brought from the USA and Turkey, and world-famous varieties of almonds Guara, Avijor, Ferragnos, Fereduel.</p>
+                        <p>Meanwhile, this year it is planned to collect a total of more than 70 thousand tons of nuts and up to 700 tons of almonds on 6 plantations of the corporation, and this figure is expected to almost double next year.</p>
+                        <p>Particular attention is paid to the processing and processing of these products on the basis of the corporation. For this purpose, special equipment was brought from the United States of America and Turkey for crushing, cleaning, removing waste, separating from stones and washing these products.</p>
+                        <p>In addition, the corporation plans to cover and export walnut and almond crops grown by farmers throughout the country. This makes it possible to offer foreign partners an additional 500 tons of walnuts and 1,500 tons of almond products. At the same time, the buyer will have the opportunity to work with one economic entity for the entire harvest of these types of products in the country.</p>
+                        <p>In the coming years, having included seedlings of nuts and almonds on an area of more than 10,000 hectares in the full yield, it is planned to use new scientific and experimental opportunities to increase the production of these products in Uzbekistan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_en.html' %}
+{% endblock %}

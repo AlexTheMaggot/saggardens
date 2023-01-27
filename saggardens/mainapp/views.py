@@ -45,3 +45,13 @@ def contacts(request):
         return redirect(redirect_link)
 
 
+def about(request):
+    if '/en/' in request.path:
+        template = 'mainapp/about_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/about_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/about_uzc.html'
+    else:
+        template = 'mainapp/about_ru.html'
+    return render(request, template)
