@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
 import requests
+from django.shortcuts import render, redirect, get_object_or_404
 from saggardens.config import *
-# Create your views here.
+from .models import Garden
 
 
 def index(request):
@@ -55,3 +55,33 @@ def about(request):
     else:
         template = 'mainapp/about_ru.html'
     return render(request, template)
+
+
+def garden_list(request):
+    context = {
+        'gardens': Garden.objects.all(),
+    }
+    if '/en/' in request.path:
+        template = 'mainapp/garden_list_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/garden_list_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/garden_list_uzc.html'
+    else:
+        template = 'mainapp/garden_list_ru.html'
+    return render(request, template, context)
+
+
+def garden_detail(request, garden_slug):
+    context = {
+        'garden': get_object_or_404(Garden, slug=garden_slug)
+    }
+    if '/en/' in request.path:
+        template = 'mainapp/garden_detail_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/garden_detail_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/garden_detail_uzc.html'
+    else:
+        template = 'mainapp/garden_detail_ru.html'
+    return render(request, template, context)

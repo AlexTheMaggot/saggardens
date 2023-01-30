@@ -1,0 +1,84 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - {{ garden.title_uzl }}{% endblock %}
+{% block description %}Sag Gardens - {{ garden.title_uzl }}{% endblock %}
+{% block keywords %}Sag Gardens - {{ garden.title_uzl }}{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzl.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>{{ garden.title_uzl }}</h1>
+                <div class="page-nav">
+                    <p>
+                        <a href="{% url 'mainapp_uzl:index' %}">Uy</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:garden_list' %}">Bog‘lar</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:garden_detail' garden.slug %}">{{ garden.title_uzl }}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="blog-content">
+                        <figure class="blog-feature-img">
+                            <img src="{{ garden.img.url }}" alt="">
+                            <div class="blog-caption-box">
+                                <div class="blog-caption-content">
+                                    <h2>{{ garden.title_uzl }}</h2>
+                                    <div class="media">
+                                        <div class="media-body">
+                                          <h5 class="mt-0">Ekin maydoni: <span class="color-text">{{ garden.cultivated_area }} ga</span></h5>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="post-content">
+                            <p>{{ garden.text_uzl }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-mt-lg">
+                    <aside>
+                        <div class="aside-block">
+                            <h4>Turli xillik</h4>
+                            <ul class="ag-tags">
+                                {% for nutvariety in garden.nutvarieties.all %}
+                                    <li><p href="blog-single.html#" class="btn button btn-sm">{{ nutvariety.nut.name_uzl }} - {{ nutvariety.area }} ga</p></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="aside-block">
+                            <h4>Qo‘nish vaqti</h4>
+                            <ul class="list-group list-group-flush">
+                                {% for growtime in garden.growtimes.all %}
+                                    <li class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="#" class="garden__growtime__link">{{ growtime.year }} - {{ growtime.nut.name_uzl }}</a>
+                                        <span class="badge badge-primary badge-pill">{{ growtime.area }} ga</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_uzl.html' %}
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - {{ garden.title_uzc }}{% endblock %}
+{% block description %}Sag Gardens - {{ garden.title_uzc }}{% endblock %}
+{% block keywords %}Sag Gardens - {{ garden.title_uzc }}{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzc.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>{{ garden.title_uzc }}</h1>
+                <div class="page-nav">
+                    <p>
+                        <a href="{% url 'mainapp_uzc:index' %}">Уй</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzc:garden_list' %}">Боғлар</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzc:garden_detail' garden.slug %}">{{ garden.title_uzc }}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="blog-content">
+                        <figure class="blog-feature-img">
+                            <img src="{{ garden.img.url }}" alt="">
+                            <div class="blog-caption-box">
+                                <div class="blog-caption-content">
+                                    <h2>{{ garden.title_uzc }}</h2>
+                                    <div class="media">
+                                        <div class="media-body">
+                                          <h5 class="mt-0">Экин майдони: <span class="color-text">{{ garden.cultivated_area }} га</span></h5>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="post-content">
+                            <p>{{ garden.text_uzc }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-mt-lg">
+                    <aside>
+                        <div class="aside-block">
+                            <h4>Турли хиллик</h4>
+                            <ul class="ag-tags">
+                                {% for nutvariety in garden.nutvarieties.all %}
+                                    <li><p href="blog-single.html#" class="btn button btn-sm">{{ nutvariety.nut.name_uzc }} - {{ nutvariety.area }} га</p></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="aside-block">
+                            <h4>Қўниш вақти</h4>
+                            <ul class="list-group list-group-flush">
+                                {% for growtime in garden.growtimes.all %}
+                                    <li class="list-group-item list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="#" class="garden__growtime__link">{{ growtime.year }} - {{ growtime.nut.name_uzc }}</a>
+                                        <span class="badge badge-primary badge-pill">{{ growtime.area }} га</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_uzc.html' %}
+{% endblock %}

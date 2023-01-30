@@ -1,10 +1,4 @@
-from django.urls import path
-from . import views
+from . import urls_ru
 
 app_name = 'mainapp_en'
-
-urlpatterns = [
-    path('', views.index, name='index'),
-    path('contacts/', views.contacts, name='contacts'),
-    path('about/', views.about, name='about'),
-]
+urlpatterns = urls_ru.urlpatterns

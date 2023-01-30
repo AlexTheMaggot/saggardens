@@ -1,0 +1,57 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Боғлар{% endblock %}
+{% block description %}Sag Gardens - Боғлар{% endblock %}
+{% block keywords %}Sag Gardens - Боғлар{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzc.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Боғлар</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzc:index' %}">Уй</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzc:garden_list' %}">Боғлар</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="content-blogs">
+                <div class="row hover-effects image-hover">
+                    {% for garden in gardens %}
+                        <div class="col-md-4" data-aos="fade-up">
+                            <div class="blog-thumbnail">
+                                <figure class="bt-img">
+                                    <a href="{% url 'mainapp_uzc:garden_detail' garden.slug %}">
+                                        <img src="{{ garden.img.url }}" alt="">
+                                    </a>
+                                </figure>
+                                <div class="bt-caption">
+                                    <h5>
+                                        <a href="{% url 'mainapp_uzc:garden_detail' garden.slug %}">{{ garden.title_uzc }}</a>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_uzc.html' %}
+{% endblock %}
