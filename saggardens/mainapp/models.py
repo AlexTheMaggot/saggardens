@@ -20,6 +20,11 @@ class Garden(models.Model):
     title_en = models.CharField(max_length=200, verbose_name='Заголовок на английском')
     title_uzl = models.CharField(max_length=200, verbose_name='Заголовок на узбекском (лат)')
     title_uzc = models.CharField(max_length=200, verbose_name='Заголовок на узбекском (кир)')
+    nut_choice = [
+        ('walnut', 'Грецкий орех'),
+        ('almond', 'Миндаль'),
+    ]
+    nut_kind = models.CharField(verbose_name='Вид ореха', max_length=200, choices=nut_choice)
     img = models.ImageField(upload_to='gardens/', verbose_name='Изображение')
     slug = models.SlugField(verbose_name='URL')
     cultivated_area = models.FloatField(verbose_name='Культивируемая территория')

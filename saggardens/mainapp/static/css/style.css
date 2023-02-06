@@ -106,4 +106,14 @@ a {
 .garden__growtime__link {
   pointer-events: none;
 }
+.optlist {
+  height: 30px;
+}
+.optlist__link {
+  fill: #FFFFFF;
+  transition: all 0.3s;
+}
+.optlist__link:hover {
+  fill: #EEC344;
+}
 /*# sourceMappingURL=style.css.map */
