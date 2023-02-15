@@ -1,0 +1,33 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Страница в разработке{% endblock %}
+{% block description %}Sag Gardens - Страница в разработке{% endblock %}
+{% block keywords %}Sag Gardens - Страница в разработке{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_ru.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Страница находится в разработке</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_ru:index' %}">Вернуться на главную</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'blocks/footer_ru.html' %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Sahifa qurilmoqda{% endblock %}
+{% block description %}Sag Gardens - Sahifa qurilmoqda{% endblock %}
+{% block keywords %}Sag Gardens - Sahifa qurilmoqda{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzl.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Sahifa qurilmoqda</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzl:index' %}">Bosh sahifaga qaytish</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'blocks/footer_uzl.html' %}
+{% endblock %}

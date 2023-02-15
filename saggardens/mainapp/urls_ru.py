@@ -9,4 +9,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('gradens/', views.garden_list, name='garden_list'),
     path('gardens/<slug:garden_slug>/', views.garden_detail, name='garden_detail'),
+    path('in-progress/', views.in_progress, name='in_progress'),
+    path('gallery/', views.gallery, name='gallery'),
 ]

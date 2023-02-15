@@ -1,0 +1,33 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - In progress{% endblock %}
+{% block description %}Sag Gardens - In progress{% endblock %}
+{% block keywords %}Sag Gardens - In progress{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_en.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>The page is under development</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_en:index' %}">Go home</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'blocks/footer_en.html' %}
+{% endblock %}

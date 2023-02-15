@@ -18,12 +18,12 @@
                     <li class="dropdown">
                         <a href="/" class="nav-item nav-link" data-toggle="dropdown">Ишлаб чиқариш</a>
                         <div class="dropdown-menu">
+                            <a href="{% url 'mainapp_uzc:gallery' %}" class="dropdown-item">Галерея</a>
                             <a href="{% url 'mainapp_uzc:garden_list' %}" class="dropdown-item">Боғлар</a>
-                            <a href="/" class="dropdown-item">Сифат</a>
-                            <a href="/" class="dropdown-item">Маҳсулотлар</a>
+                            <a href="{% url 'mainapp_uzc:in_progress' %}" class="dropdown-item">Маҳсулотлар</a>
                         </div>
                     </li>
-                    <li><a href="/" class="nav-item nav-link last-link-item">Янгиликлар</a></li>
+                    <li><a href="{% url 'mainapp_uzc:in_progress' %}" class="nav-item nav-link last-link-item">Янгиликлар</a></li>
                     <li><a href="{% url 'mainapp_uzc:contacts' %}" class="nav-item nav-link last-link-item">Контактлар</a></li>
                     <li class="dropdown">
                         <a href="{% url 'mainapp_uzc:index' %}" id="header_language_uzc" class="nav-item nav-link lang__dropdown" data-toggle="dropdown">

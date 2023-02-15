@@ -14,7 +14,19 @@ class NutvarietyAdmin(admin.ModelAdmin):
     list_display = ('garden', 'nut', 'area')
 
 
-admin.site.register(Nut)
-admin.site.register(Growtime, GrowtimeAdmin)
-admin.site.register(Garden, GardenAdmin)
-admin.site.register(Nutvariety, NutvarietyAdmin)
+class_pairs = [
+    [Growtime, GrowtimeAdmin],
+    [Garden, GardenAdmin],
+    [Nutvariety, NutvarietyAdmin],
+]
+
+class_single = [
+    Nut,
+    Photo,
+]
+
+for item in class_single:
+    admin.site.register(item)
+
+for item in class_pairs:
+    admin.site.register(item[0], item[1])

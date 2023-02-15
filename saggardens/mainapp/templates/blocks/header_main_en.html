@@ -19,12 +19,12 @@
                     <li class="dropdown">
                         <a href="/" class="nav-item nav-link" data-toggle="dropdown">Production</a>
                         <div class="dropdown-menu">
+                            <a href="{% url 'mainapp_en:gallery' %}" class="dropdown-item">Gallery</a>
                             <a href="{% url 'mainapp_en:garden_list' %}" class="dropdown-item">Gardens</a>
-                            <a href="/" class="dropdown-item">Quality</a>
-                            <a href="/" class="dropdown-item">Products</a>
+                            <a href="{% url 'mainapp_en:in_progress' %}" class="dropdown-item">Products</a>
                         </div>
                     </li>
-                    <li><a href="/" class="nav-item nav-link last-link-item">News</a></li>
+                    <li><a href="{% url 'mainapp_en:in_progress' %}" class="nav-item nav-link last-link-item">News</a></li>
                     <li><a href="{% url 'mainapp_en:contacts' %}" class="nav-item nav-link last-link-item">Contacts</a></li>
                     <li class="dropdown">
                         <a href="{% url 'mainapp_en:index' %}" id="header_language_en" class="nav-item nav-link lang__dropdown" data-toggle="dropdown">

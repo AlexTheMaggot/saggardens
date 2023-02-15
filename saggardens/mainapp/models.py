@@ -66,3 +66,11 @@ class Nutvariety(models.Model):
     class Meta:
         verbose_name = 'Разновидность'
         verbose_name_plural = 'Разновидности'
+
+
+class Photo(models.Model):
+    img = models.ImageField(upload_to='gallery/', verbose_name='Изображение')
+
+    class Meta:
+        verbose_name = 'Фото'
+        verbose_name_plural = 'Галлерея'

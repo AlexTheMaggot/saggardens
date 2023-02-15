@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from saggardens.config import *
-from .models import Garden
+from .models import Garden, Photo
 
 
 def index(request):
@@ -84,4 +84,31 @@ def garden_detail(request, garden_slug):
         template = 'mainapp/garden_detail_uzc.html'
     else:
         template = 'mainapp/garden_detail_ru.html'
+    return render(request, template, context)
+
+
+def in_progress(request):
+    if '/en/' in request.path:
+        template = 'mainapp/in_progress_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/in_progress_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/in_progress_uzc.html'
+    else:
+        template = 'mainapp/in_progress_ru.html'
+    return render(request, template)
+
+
+def gallery(request):
+    context = {
+        'gallery': Photo.objects.all()
+    }
+    if '/en/' in request.path:
+        template = 'mainapp/gallery_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/gallery_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/gallery_uzc.html'
+    else:
+        template = 'mainapp/gallery_ru.html'
     return render(request, template, context)
