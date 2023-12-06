@@ -116,4 +116,7 @@ a {
 .optlist__link:hover {
   fill: #EEC344;
 }
+.post-content img {
+  border-radius: 5px;
+}
 /*# sourceMappingURL=style.css.map */

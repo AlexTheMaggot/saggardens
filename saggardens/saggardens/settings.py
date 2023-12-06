@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp.apps.MainappConfig',
+    'django_summernote',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,3 +77,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/'),
 )
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+X_FRAME_OPTIONS = 'ALLOWALL'

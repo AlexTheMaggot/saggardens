@@ -71,6 +71,56 @@ class Nutvariety(models.Model):
 class Photo(models.Model):
     img = models.ImageField(upload_to='gallery/', verbose_name='Изображение')
 
+    def __str__(self):
+        return f'Фото {self.id}'
+
     class Meta:
         verbose_name = 'Фото'
         verbose_name_plural = 'Галлерея'
+
+
+class Author(models.Model):
+    name_ru = models.CharField(max_length=200, verbose_name='Имя на русском')
+    name_en = models.CharField(max_length=200, verbose_name='Имя на английском')
+    name_uzl = models.CharField(max_length=200, verbose_name='Имя на узбекском (лат)')
+    name_uzc = models.CharField(max_length=200, verbose_name='Имя на узбекском (кир)')
+    speciality_ru = models.CharField(max_length=200, verbose_name='Специальность на русском')
+    speciality_en = models.CharField(max_length=200, verbose_name='Специальность на английском')
+    speciality_uzl = models.CharField(max_length=200, verbose_name='Специальность на узбекском (лат)')
+    speciality_uzc = models.CharField(max_length=200, verbose_name='Специальность на узбекском (кир)')
+    img = models.ImageField(upload_to='authors/', verbose_name='Фото (100x100)')
+
+    def __str__(self):
+        return self.name_ru
+
+    class Meta:
+        verbose_name = 'Автор'
+        verbose_name_plural = 'Авторы'
+
+
+class Post(models.Model):
+    title_ru = models.CharField(max_length=200, verbose_name='Заголовок на русском')
+    title_en = models.CharField(max_length=200, verbose_name='Заголовок на английском')
+    title_uzl = models.CharField(max_length=200, verbose_name='Заголовок на узбекском (лат)')
+    title_uzc = models.CharField(max_length=200, verbose_name='Заголовок на узбекском (кир)')
+    description_ru = models.TextField(verbose_name='Краткое описание на русском')
+    description_en = models.TextField(verbose_name='Краткое описание на английском')
+    description_uzl = models.TextField(verbose_name='Краткое описание на узбекском (лат)')
+    description_uzc = models.TextField(verbose_name='Краткое описание на узбекском (кир)')
+    text_ru = models.TextField(verbose_name='Текст на русском')
+    text_en = models.TextField(verbose_name='Текст на английском')
+    text_uzl = models.TextField(verbose_name='Текст на узбекском (лат)')
+    text_uzc = models.TextField(verbose_name='Текст на узбекском (кир)')
+    date = models.DateField(verbose_name='Дата публикации', auto_now_add=True)
+    img = models.ImageField(upload_to='posts/', verbose_name='Изображение (992x700)')
+    author = models.ForeignKey(Author, on_delete=models.PROTECT, verbose_name='Автор', related_name='posts')
+
+
+    def __str__(self):
+        return self.title_ru
+
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = 'Новости'
+
+

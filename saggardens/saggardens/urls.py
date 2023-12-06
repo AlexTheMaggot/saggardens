@@ -24,6 +24,7 @@ urlpatterns = [
     path('en/', include('mainapp.urls_en', namespace='mainapp_en')),
     path('uzl/', include('mainapp.urls_uzl', namespace='mainapp_uzl')),
     path('uzc/', include('mainapp.urls_uzc', namespace='mainapp_uzc')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

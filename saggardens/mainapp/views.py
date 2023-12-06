@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from saggardens.config import *
-from .models import Garden, Photo
+from .models import Garden, Photo, Post
 
 
 def index(request):
@@ -111,4 +111,36 @@ def gallery(request):
         template = 'mainapp/gallery_uzc.html'
     else:
         template = 'mainapp/gallery_ru.html'
+    return render(request, template, context)
+
+
+def news_list(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    if '/en/' in request.path:
+        template = 'mainapp/news_list_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/news_list_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/news_list_uzc.html'
+    else:
+        template = 'mainapp/news_list_ru.html'
+    return render(request, template, context)
+
+
+def news_detail(request, post_id):
+    context = {
+        'post': get_object_or_404(Post, id=post_id),
+        'last_5_posts': Post.objects.all()[:10],
+        'posts': Post.objects.all(),
+    }
+    if '/en/' in request.path:
+        template = 'mainapp/news_detail_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/news_detail_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/news_detail_uzc.html'
+    else:
+        template = 'mainapp/news_detail_ru.html'
     return render(request, template, context)
