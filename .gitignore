@@ -1,5 +1,6 @@
-/saggardens/saggardens/config.py
 /.idea/
 /frontend/
 /public/
 /saggardens/db.sqlite3
+/saggardens/saggardens/config.py
+/saggardens/mainapp/media/
