@@ -1,0 +1,55 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Kompaniya haqida{% endblock %}
+{% block description %}Sag Gardens - Kompaniya haqida{% endblock %}
+{% block keywords %}Sag Gardens - Kompaniya haqida{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzl.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Kompaniya haqida</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzl:index' %}">Uy</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:about' %}">Kompaniya haqida</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+                <div class="col-lg-7 col-mt-lg">
+                    <div class="about-agroly-info">
+                        <h5>Sag Gardens</h5>
+                        <h2>Kompaniya haqida <br /><span class="light-text">ma'lumot</span></h2>
+                        <p>2000 yilda faoliyatini boshlagan SAG korporatsiyasi joriy yilda Sag Gardens loyihasini amalga oshirdi. 4 yil avval 6 ming gektardan ortiq maydonga ekilgan 1 million 258 ming 900 tup yong‘oq va bodom ko‘chatlari o‘tgan yili o‘z mevasini bera boshlagani, asosan, eksportga yo‘naltirilgan mazkur loyihani amalga oshirishga mustahkam zamin yaratdi. Korporatsiya qoshida tashkil etilgan “Sag Gardens” savdo belgisi ostida turli mevali mahsulotlarni xorijga eksport qilishga mo‘ljallangan “Sag Agro Logistics” mas’uliyati cheklangan jamiyati bugungi kunda O‘zbekistonda yetishtirilgan turli meva mahsulotlarini qayta ishlash va eksport qilish bilan shug‘ullanmoqda. O‘zbekiston Respublikasi, xususan, ko‘chatlari AQSH va Turkiyadan olib kelingan “Chandler” yong‘og‘i hamda dunyoga mashhur bodomning Guara, Avijor, Ferragnos, Fereduel navlari.</p>
+                        <p>Ayni paytda, joriy yilda korporatsiyaga qarashli 6 ta plantatsiyada jami 70 ming tonnadan ortiq yong‘oq va 700 tonnagacha bodom yig‘ish rejalashtirilgan bo‘lib, kelgusi yilda bu ko‘rsatkich qariyb ikki baravar oshishi kutilmoqda.</p>
+                        <p>Korporatsiya negizida mazkur mahsulotlarni qayta ishlash va qayta ishlashga alohida e’tibor qaratilmoqda. Shu maqsadda Amerika Qo‘shma Shtatlari va Turkiyadan bu mahsulotlarni maydalash, tozalash, chiqindilarni olib tashlash, toshlardan ajratish va yuvish uchun maxsus jihozlar keltirildi.</p>
+                        <p>Bundan tashqari, korporatsiya mamlakatimiz bo‘ylab fermerlar yetishtirgan yong‘oq va bodom ekinlarini qoplash va eksport qilishni rejalashtirmoqda. Bu xorijlik hamkorlarga qo‘shimcha 500 tonna yong‘oq va 1500 tonna bodom mahsulotlarini taklif qilish imkonini bermoqda. Shu bilan birga, xaridor mamlakatdagi ushbu turdagi mahsulotlarning butun hosili uchun bitta xo‘jalik yurituvchi subyekt bilan ishlash imkoniyatiga ega bo‘ladi.</p>
+                        <p>Kelgusi yillarda 10 ming gektardan ortiq maydondagi yong‘oq va bodom ko‘chatlarini to‘liq hosilga qo‘shib, O‘zbekistonda ushbu mahsulotlar ishlab chiqarishni ko‘paytirish uchun yangi ilmiy va tajriba imkoniyatlaridan foydalanish rejalashtirilgan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_uzl.html' %}
+{% endblock %}
