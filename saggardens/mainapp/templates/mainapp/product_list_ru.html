@@ -1,0 +1,63 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Продукция{% endblock %}
+{% block description %}Sag Gardens - Продукция{% endblock %}
+{% block keywords %}Sag Gardens - Продукция{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_ru.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Продукция</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_ru:index' %}">Главная</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_ru:product_list' %}">Продукция</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="grid">
+                <div class="filter-container">
+                    <ul class="filter">
+                        <li class="active" data-filter="*">Все</li>
+                        {% for category in categories %}
+                            <li data-filter=".category{{ category.id }}">{{ category.name_ru }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="grid" id="kehl-grid">
+                    <div class="grid-sizer"></div>
+                    {% for product in products %}
+                        <div class="grid-box grid-item category{{ product.category.id }}">
+                            <a class="image-popup-vertical-fit"
+                                href="{% url 'mainapp_ru:product_detail' product.id %}">
+                                <div class="image-mask"></div>
+                                <img src="{{ product.img.url }}" alt="" />
+                                <h3>{{ product.name_ru }}</h3>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+    </section>
+    {% include 'blocks/footer_ru.html' %}
+{% endblock %}
