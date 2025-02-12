@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: sans-serif;
+}
+.progress {
+  background: url("/static/img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.progress__img {
+  height: 200px;
+}
+.progress__gear {
+  fill: #FFFFFF;
+}
+.progress__gear_1 {
+  animation: gear_1_rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  transform-origin: 325px 685px;
+}
+.progress__gear_2 {
+  animation: gear_2_rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  transform-origin: 525px 182px;
+}
+.progress__gear_3 {
+  animation: gear_2_rotate;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  transform-origin: 821px 489px;
+}
+.progress__title {
+  text-align: center;
+  color: #FFFFFF;
+}
+.progress__mail {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 10px;
+  text-decoration: none;
+}
+@keyframes gear_1_rotate {
+  from {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes gear_2_rotate {
+  from {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+.feature__svg {
+  height: 60px;
+}
+.feature__path {
+  fill: #844D15;
+}
+.footer__link {
+  color: #CCCCCC;
+  transition: all 0.4s;
+}
+.footer__link:hover {
+  color: #EEC344;
+}
+.lang__img {
+  height: 15px;
+  width: auto;
+}
+.lang__dropdown {
+  padding: 23px 0 !important;
+}
+.partner__img {
+  height: 200px;
+}
+.garden__growtime__link {
+  pointer-events: none;
+}
+.optlist {
+  height: 30px;
+}
+.optlist__link {
+  fill: #FFFFFF;
+  transition: all 0.3s;
+}
+.optlist__link:hover {
+  fill: #EEC344;
+}
+.post-content img {
+  border-radius: 5px;
+}
+/*# sourceMappingURL=style.css.map */

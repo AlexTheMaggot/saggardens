@@ -1,0 +1,136 @@
+@white: #FFFFFF;
+@yellow: #EEC344;
+@gray-light: #CCCCCC;
+body {
+  margin: 0;
+}
+p, h1, h2, h3, h4, h5, h6, a {
+  font-family: sans-serif;
+}
+.progress {
+  background: url("/static/img/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    height: 200px;
+  }
+  &__gear {
+    fill: @white;
+    &_1 {
+      animation: gear_1_rotate;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      transform-origin: 325px 685px;
+    }
+    &_2 {
+      animation: gear_2_rotate;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      transform-origin: 525px 182px;
+    }
+    &_3 {
+      animation: gear_2_rotate;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-timing-function: linear;
+      transform-origin: 821px 489px;
+    }
+  }
+  &__title {
+    text-align: center;
+    color: @white;
+  }
+  &__mail {
+    color: @white;
+    position: absolute;
+    bottom: 10px;
+    text-decoration: none;
+  }
+}
+
+@keyframes gear_1_rotate {
+  from {
+    transform:rotate(0);
+  }
+  50% {
+    transform:rotate(180deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes gear_2_rotate {
+  from {
+    transform:rotate(0);
+  }
+  50% {
+    transform:rotate(360deg);
+  }
+  to {
+    transform:rotate(720deg);
+  }
+}
+
+.feature {
+  &__svg {
+    height: 60px;
+  }
+  &__path {
+    fill: #844D15;
+  }
+}
+
+.footer__link {
+  color: @gray-light;
+  transition: all 0.4s;
+  &:hover {
+    color: @yellow;
+  }
+}
+
+.lang {
+  &__img {
+    height: 15px;
+    width: auto;
+  }
+  &__dropdown {
+    padding: 23px 0 !important;
+  }
+}
+
+.partner {
+  &__img {
+    height: 200px;
+  }
+}
+
+.garden {
+  &__growtime {
+    &__link {
+      pointer-events: none;
+    }
+  }
+}
+
+.optlist {
+  height: 30px;
+  &__link {
+    fill: @white;
+    transition: all 0.3s;
+    &:hover {
+      fill: @yellow;
+    }
+  }
+}
+
+.post-content img {
+  border-radius: 5px;
+}
