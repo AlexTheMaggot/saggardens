@@ -1,0 +1,55 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - {{ product.name_ru }}{% endblock %}
+{% block description %}Sag Gardens - {{ product.name_ru }}{% endblock %}
+{% block keywords %}Sag Gardens - {{ product.name_ru }}{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_ru.html' %}
+        <div class="pages-hero">
+            <div class="container">
+                <div class="pages-title">
+                    <h1>{{ product.name_ru }}</h1>
+                    <div class="page-nav">
+                        <p><a href="{% url 'mainapp_ru:index' %}">Главная</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_ru:product_list' %}">Продукция</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_ru:product_detail' product.id %}">{{ product.name_ru }}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="container mt-5 mb-5">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div class="product-information">
+                            <figure class="product-feauture">
+                                <img src="{{ product.img.url }}" alt="">
+                            </figure>
+                            <div class="product-details">
+                                <div class="layer-title">
+                                    <h2><span class="light-text">{{ product.name_ru }}</span></h2>
+                                    <p>
+                                        <strong>{{ product.description_ru }}</strong>
+                                    </p>
+                                </div>
+                                <p>{{ product.text_ru }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% include 'blocks/footer_ru.html' %}
+{% endblock %}
