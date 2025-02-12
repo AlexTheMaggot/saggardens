@@ -1,0 +1,67 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - News{% endblock %}
+{% block description %}Sag Gardens - News{% endblock %}
+{% block keywords %}Sag Gardens - News{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_en.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>News</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_en:index' %}">Home</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_en:news_list' %}">News</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="content-blogs">
+                <div class="row hover-effects image-hover">
+                    {% for post in posts %}
+                        <div class="col-md-6" data-aos="fade-up">
+                            <div class="blog-thumbnail">
+                                <figure class="bt-img"><a href="{% url 'mainapp_en:news_detail' post.id %}"><img src="{{ post.img.url }}" alt=""></a>
+                                </figure>
+                                <div class="bt-caption">
+                                    <div class="bt-details">
+                                        <p>{{ post.date }}</p>
+                                    </div>
+                                    <h4><a href="{% url 'mainapp_en:news_detail' post.id %}">{{ post.title_en }}</a> </h4>
+                                    <p>{{ post.description_en }}</p>
+                                    <hr class="bt-separator">
+                                    <div class="author">
+                                        <div class="media">
+                                            <img src="{{ post.author.img.url }}" class="mr-3" alt="...">
+                                            <div class="media-body">
+                                              <h5 class="mt-0">{{ post.author.name_en }}</h5>
+                                              <p>{{ post.author.speciality_en }}</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_en.html' %}
+{% endblock %}
