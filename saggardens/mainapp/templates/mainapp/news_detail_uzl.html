@@ -1,0 +1,117 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}{{ post.title_uzl }}{% endblock %}
+{% block description %}{{ post.title_uzl }}{% endblock %}
+{% block keywords %}{{ post.title_uzl }}{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzl.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>{{ post.title_uzl }}</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzl:index' %}">Uy</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:news_list' %}">Yangiliklar</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:news_detail' post.id %}">{{ post.title_uzl }}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="blog-content">
+                        <figure class="blog-feature-img">
+                            <img src="{{ post.img.url }}" alt="">
+                            <div class="blog-caption-box">
+                                <div class="blog-caption-content">
+                                    <h2>{{ post.title_uzl }}</h2>
+                                    <div class="media">
+                                        <img src="{{ post.author.img.url }}" class="mr-3" alt="...">
+                                        <div class="media-body">
+                                          <h5 class="mt-0">{{ post.author.name_uzl }} &nbsp;|&nbsp; {{ post.date }}</h5>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </figure>
+                        <div class="post-content">
+                            {{ post.text_uzl | safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-mt-lg">
+                    <aside>
+                        <div class="aside-block">
+                            <div class="aside-block">
+                                <h4>Oxirgi xabarlar</h4>
+                                {% for p in last_5_posts %}
+                                    <div class="media mt-3">
+                                        <a href="{% url 'mainapp_uzl:news_detail' p.id %}"><img src="{{ p.img.url }}" class="mr-3" alt="..."></a>
+                                        <div class="media-body">
+                                            <p class="post-date">{{ p.date }}</p>
+                                            <h5 class="mt-0">
+                                                <a href="{% url 'mainapp_uzl:news_detail' p.id %}">{{ p.title_uzl }}</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <div class="ag-bg-wrapper mt-5">
+            <div class="container">
+                <div class="layer-title text-center">
+                    <h2>Barcha <span class="light-text">yangiliklar</span></h2>
+                </div>
+                <div class="news-carousel">
+                    <div class="owl-carousel owl-theme hover-effects image-hover">
+                        {% for p in posts %}
+                            <div class="item">
+                                <div class="news-card">
+                                    <figure class="nc-thumb"><a href="{% url 'mainapp_uzl:news_detail' p.id %}"><img src="{{ p.img.url }}" alt=""></a></figure>
+                                    <div class="nc-caption">
+                                        <div class="media">
+                                            <div class="date-box">
+                                                <div class="db-inner">
+                                                    <h5>{{ p.date | date:'d' }} <br><span>{{ p.date | date:'M' }}</span></h5>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                              <h4 class="mt-0">{{ p.title_uzl }}</h4>
+                                            </div>
+                                          </div>
+                                          <p>{{ p.description_uzl }}</p>
+                                          <a href="{% url 'mainapp_uzl:news_detail' p.id %}" class="btn button btn-md btn-outline">Qo'shimcha ma'lumot olish uchun</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="owl-theme">
+                        <div class="owl-controls">
+                            <div class="custom-nav owl-nav"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'blocks/footer_uzl.html' %}
+{% endblock %}
