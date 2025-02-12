@@ -1,0 +1,133 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Контакты{% endblock %}
+{% block description %}Sag Gardens - Контакты{% endblock %}
+{% block keywords %}Sag Gardens - Контакты{% endblock %}
+{% block content %}
+    <!-- PRELOADER START -->
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+
+    {% include 'blocks/header_ru.html' %}
+
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Контакты</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_ru:index' %}">Главная</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_ru:contacts' %}">Контакты</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT START -->
+    <section>
+        <!-- SERVICES BOX START -->
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-box-layer">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="sb-caption">
+                            <h4>Наш адрес</h4>
+                            <p>Самаркандская область, Жомбайский район,<br/>село Назар, экономическая зона "Ургут"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-box-layer">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="sb-caption">
+                            <h4>Наш телефон</h4>
+                            <p>+998 (91) 557-77-70<br/>+998 (33) 557-77-70</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-box-layer">
+                        <i class="fas fa-envelope"></i>
+                        <div class="sb-caption">
+                            <h4>E-mail</h4>
+                            <p>sale@saggardens.uz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SERVICES BOX END -->
+        <div class="wrapper-form mt-5">
+            <div class="container">
+                <div class="layer-title text-center">
+                    <h2>Оставьте <span class="light-text">заявку</span></h2>
+                    <p>Наши специалисты свяжутся с вами в ближайшее время</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <form id="contact-form" method="POST" action="">
+                            {% csrf_token %}
+                            <div class="messages"></div>
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_name" type="text" name="name" class="form-control customize"
+                                                placeholder="Имя" required="required"
+                                                data-error="Укажите имя">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_email" type="email" name="email"
+                                                class="form-control customize" placeholder="E-mail"
+                                                required="required" data-error="Укажите E-mail">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="form_phone" type="tel" name="phone"
+                                                class="form-control customize" placeholder="Номер телефона">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea id="form_message" name="message" class="form-control customize"
+                                                placeholder="Сообщение" rows="6"></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 btn-send">
+                                        <p><input type="submit" class="btn btn-contact button" value="Отправить"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    {% include 'blocks/footer_ru.html' %}
+    <!-- FOOTER END -->
+{% endblock %}
