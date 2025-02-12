@@ -1,0 +1,67 @@
+{% extends 'wrapper.html' %}
+
+{% block title %}Sag Gardens - Galereya{% endblock %}
+{% block description %}Sag Gardens - Galereya{% endblock %}
+{% block keywords %}Sag Gardens - Galereya{% endblock %}
+
+{% block content %}
+    <!-- PRELOADER START -->
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+
+    {% include 'blocks/header_uzl.html' %}
+
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Galereya</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzl:index' %}">Uy</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:gallery' %}">Galereya</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT START -->
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="grid">
+                <div class="grid" id="kehl-grid">
+                    <div class="grid-sizer"></div>
+                    {% for photo in gallery %}
+                        <div class="grid-box grid-item land">
+                            <a class="image-popup-vertical-fit image-popup-vertical-fit_1"
+                                href="{{ photo.img.url }}">
+                                <div class="image-mask"></div>
+                                <img src="{{ photo.img.url }}" alt="" />
+                                <h3>Ochiq</h3>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+    </section>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    {% include 'blocks/footer_uzl.html' %}
+    <!-- FOOTER END -->
+
+{% endblock %}
