@@ -1,0 +1,90 @@
+{% load static %}
+<header>
+    <!-- NAV START -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container p-0">
+            <a href="{% url 'mainapp_ru:index' %}" class="navbar-brand">
+                <img src="{% static 'img/saggardens_white.svg' %}" alt="" class="logo__svg">
+            </a>
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+            </button>
+
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="{% url 'mainapp_ru:index' %}" class="nav-item nav-link">Главная</a></li>
+                    <li><a href="{% url 'mainapp_ru:about' %}" class="nav-item nav-link">О компании</a></li>
+                    <li class="dropdown">
+                        <a href="/" class="nav-item nav-link" data-toggle="dropdown">Производство</a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'mainapp_ru:gallery' %}" class="dropdown-item">Галерея</a>
+                            <a href="{% url 'mainapp_ru:garden_list' %}" class="dropdown-item">Сады</a>
+                            <a href="{% url 'mainapp_ru:product_list' %}" class="dropdown-item">Продукция</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'mainapp_ru:news_list' %}" class="nav-item nav-link last-link-item">Новости</a></li>
+                    <li><a href="{% url 'mainapp_ru:contacts' %}" class="nav-item nav-link last-link-item">Контакты</a></li>
+                    <li class="dropdown">
+                        <a href="{% url 'mainapp_ru:index' %}" id="header_language_ru" class="nav-item nav-link lang__dropdown" data-toggle="dropdown">
+                            <img class="lang__img" src="{% static 'img/RUS.svg' %}" alt="">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'mainapp_uzc:index' %}" id="header_language_uzc" class="dropdown-item">
+                                <img class="lang__img" src="{% static 'img/UZB.svg' %}" alt="">
+                            </a>
+                            <a href="{% url 'mainapp_uzl:index' %}" id="header_language_uzl" class="dropdown-item">
+                                <img class="lang__img" src="{% static 'img/UZB.svg' %}" alt="">
+                                O'Z
+                            </a>
+                            <a href="{% url 'mainapp_en:index' %}" id="header_language_en" class="dropdown-item">
+                                <img class="lang__img" src="{% static 'img/USA.svg' %}" alt="">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV END -->
+
+    <!--SLIDER START-->
+    <div class="home-slider">
+        <!-- partial:index.partial.html -->
+        <div class="hero-slider" data-carousel>
+            <div class="carousel-cell" style="background-image:url({% static 'img/bg_slide_1.webp' %});">
+                <div class="overlay"></div>
+                <div class="container slider-caption">
+                    <h5 class="subtitle">Sag Gardens</h5>
+                    <h2 class="title">Орехи  <br> <span class="color-text">Высокого </span> <span class="color-text">Качества</span></h2>
+                    <div class="slider-btn">
+                        <a href="/" class="btn button btn-outline-white">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell" style="background-image:url({% static 'img/bg_slide_2.webp' %});">
+                <div class="overlay"></div>
+                <div class="container slider-caption">
+                    <h5 class="subtitle">Sag Gardens</h5>
+                    <h2 class="title">Орехи  <br> <span class="color-text">Высокого </span> <span class="color-text">Качества</span></h2>
+                    <div class="slider-btn">
+                        <a href="/" class="btn button btn-outline-white">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell" style="background-image:url({% static 'img/bg_slide_3.webp' %});">
+                <div class="overlay"></div>
+                <div class="container slider-caption">
+                    <h5 class="subtitle">Sag Gardens</h5>
+                    <h2 class="title">Орехи  <br> <span class="color-text">Высокого </span> <span class="color-text">Качества</span></h2>
+                    <div class="slider-btn">
+                        <a href="/" class="btn button btn-outline-white">Узнать больше</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- partial -->
+    </div>
+    <!--SLIDER END-->
+</header>
