@@ -1,0 +1,50 @@
+{% load static %}
+<header>
+    <!-- NAV START -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container p-0">
+            <a href="{% url 'mainapp_uzc:index' %}" class="navbar-brand">
+                <img src="{% static 'img/saggardens_white.svg' %}" alt="">
+            </a>
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+                <span class="menu-icon-bar"></span>
+            </button>
+            <div id="main-nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li><a href="{% url 'mainapp_uzc:index' %}" class="nav-item nav-link">Уй</a></li>
+                    <li><a href="{% url 'mainapp_uzc:about' %}" class="nav-item nav-link">Компания ҳақида</a></li>
+                    <li class="dropdown">
+                        <a href="/" class="nav-item nav-link" data-toggle="dropdown">Ишлаб чиқариш</a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'mainapp_uzc:gallery' %}" class="dropdown-item">Галерея</a>
+                            <a href="{% url 'mainapp_uzc:garden_list' %}" class="dropdown-item">Боғлар</a>
+                            <a href="{% url 'mainapp_uzc:product_list' %}" class="dropdown-item">Маҳсулотлар</a>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'mainapp_uzc:news_list' %}" class="nav-item nav-link last-link-item">Янгиликлар</a></li>
+                    <li><a href="{% url 'mainapp_uzc:contacts' %}" class="nav-item nav-link last-link-item">Контактлар</a></li>
+                    <li class="dropdown">
+                        <a href="{% url 'mainapp_uzc:index' %}" id="header_language_uzc" class="nav-item nav-link lang__dropdown" data-toggle="dropdown">
+                            <img class="lang__img" src="{% static 'img/UZB.svg' %}" alt="">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="{% url 'mainapp_uzl:index' %}" id="header_language_uzl" class="dropdown-item">
+                                <img class="lang__img" src="{% static 'img/UZB.svg' %}" alt="">
+                                O'Z
+                            </a>
+                            <a href="{% url 'mainapp_ru:index' %}" id="header_language_ru" class="dropdown-item">
+                                <img class="lang__img" src="{% static 'img/RUS.svg' %}" alt="">
+                            </a>
+                            <a href="{% url 'mainapp_en:index' %}" id="header_language_en" class="dropdown-item">
+                                <img class="lang__img" src="{% static 'img/USA.svg' %}" alt="">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV END -->
+</header>
