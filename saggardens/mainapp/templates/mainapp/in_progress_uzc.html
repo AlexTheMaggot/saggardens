@@ -1,0 +1,33 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Саҳифа қурилмоқда{% endblock %}
+{% block description %}Sag Gardens - Саҳифа қурилмоқда{% endblock %}
+{% block keywords %}Sag Gardens - Саҳифа қурилмоқда{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzc.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Саҳифа қурилмоқда</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzc:index' %}">Бош саҳифага қайтиш</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'blocks/footer_uzc.html' %}
+{% endblock %}
