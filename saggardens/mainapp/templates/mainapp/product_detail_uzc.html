@@ -1,0 +1,55 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - {{ product.name_uzc }}{% endblock %}
+{% block description %}Sag Gardens - {{ product.name_uzc }}{% endblock %}
+{% block keywords %}Sag Gardens - {{ product.name_uzc }}{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzc.html' %}
+        <div class="pages-hero">
+            <div class="container">
+                <div class="pages-title">
+                    <h1>{{ product.name_uzc }}</h1>
+                    <div class="page-nav">
+                        <p><a href="{% url 'mainapp_uzc:index' %}">Уй</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzc:product_list' %}">Маҳсулотлар</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzc:product_detail' product.id %}">{{ product.name_uzc }}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="container mt-5 mb-5">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10">
+                        <div class="product-information">
+                            <figure class="product-feauture">
+                                <img src="{{ product.img.url }}" alt="">
+                            </figure>
+                            <div class="product-details">
+                                <div class="layer-title">
+                                    <h2><span class="light-text">{{ product.name_uzc }}</span></h2>
+                                    <p>
+                                        <strong>{{ product.description_uzc }}</strong>
+                                    </p>
+                                </div>
+                                <p>{{ product.text_uzc }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% include 'blocks/footer_uzc.html' %}
+{% endblock %}
