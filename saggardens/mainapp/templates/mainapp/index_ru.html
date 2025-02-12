@@ -1,0 +1,155 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Главная{% endblock %}
+{% block description %}Sag Gardens - Главная{% endblock %}
+{% block keywords %}Sag Gardens - Главная{% endblock %}
+{% block content %}
+    <!-- PRELOADER START -->
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+
+    {% include 'blocks/header_main_ru.html' %}
+
+        <!-- CONTENT START -->
+        <div class="ws-wrapper mt-5 mb-5">
+            <div class="row no-gutters">
+                <div class="order-last order-md-3 col-lg-6">
+                    <div class="section-parallax">
+                    </div>
+                </div>
+                <div class="order-first order-md-9 col-lg-6">
+                    <div class="ws-section-content">
+                        <div class="ws-inner-content">
+                            <h2>Sag Gardens <span class="light-text">Информация</span></h2>
+                            <p>Корпорация «SAG», начавшая свою деятельность в 2000 году, в этом году реализовала проект «Sag Gardens». Тот факт, что в уходящем году начали плодоносить посаженные 1 258 900 саженца орехов и миндаля 4 года назад на более чем 6000 гектарах земли, заложил прочную основу для реализации этого проекта, ориентированного в основном на экспорт.</p>
+                            <a class="btn button" href="/" role="button">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- CONTENT START -->
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="grid-box-content">
+                        <div class="grid-box-layer" data-aos="fade-up" data-aos-offset="-500" data-aos-delay="300">
+                            <div class="media">
+                                <img src="{% static 'img/quality.svg' %}" alt="" class="mr-3">
+                                <div class="media-body">
+                                    <h4>Высокое качество</h4>
+                                    <p>Мы гарантируем качество нашего продукта и выращивание без опасных пестицидов</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-box-layer" data-aos="fade-up" data-aos-offset='-500' data-aos-delay="300">
+                            <div class="media">
+                                <img src="{% static 'img/delivery.svg' %}" alt="" class="mr-3">
+                                <div class="media-body">
+                                    <h4>Быстрая доставка</h4>
+                                    <p>После заказа вы получите нашу продукцию в короткие сроки</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-box-layer" data-aos="fade-up" data-aos-offset='-500' data-aos-delay="300">
+                            <div class="media">
+                                <img src="{% static 'img/nuts.svg' %}" alt="" class="mr-3">
+                                <div class="media-body">
+                                    <h4>Ассортимент</h4>
+                                     <p>Мы поставляем грецкий орех сорта Chendler и миндаль сортов Guara, Avijor, Ferragnos, Fereduel</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <figure class="large-img-layer">
+                        <img src="{% static 'img/features.webp' %}" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <!-- CONTENT END -->
+
+        <!-- COUNTER START -->
+        <div class="ag-ws-parallax mt-5 mb-5">
+            <div class="container">
+                <div class="counter-wrapper-layer">
+                    <div class="counter-inner-box">
+                        <div class="media">
+                            <img src="{% static 'images/icons/agronomy-w.svg' %}" class="mr-3" alt="...">
+                            <div class="media-body">
+                                <div class="counter" data-count="6">0</div>
+                                <p>Интенсивных садов</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="counter-inner-box">
+                        <div class="media">
+                            <img src="{% static 'img/ruller.svg' %}" class="mr-3" alt="...">
+                            <div class="media-body">
+                                <div class="counter" data-count="6000">0</div>
+                                <p>Гектаров садов</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="counter-inner-box">
+                        <div class="media">
+                            <img src="{% static 'images/icons/growing-w.svg' %}" class="mr-3" alt="...">
+                            <div class="media-body">
+                                <div class="counter" data-count="1258900">0</div>
+                                <p>Саженцев</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="counter-inner-box">
+                        <div class="media">
+                            <img src="{% static 'images/icons/growth.svg' %}" class="mr-3" alt="...">
+                            <div class="media-body">
+                                <div class="counter" data-count="30000">0</div>
+                                <p>Тонн продукции</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- COUNTER END -->
+
+        <!-- CONTENT START -->
+        <div class="container mb-5">
+            <div class="splip-layer">
+                <div class="row no-gutters">
+                    <div class="col-lg-6">
+                        <div class="ag-ws-content">
+                            <div class="ag-ws-inner">
+                                <h5>SAG GARDENS</h5>
+                                <h3>Наши <span class="light-text">Цели</span></h3>
+                                <p>В ближайшие годы, включив в полную урожайность саженцы орехов и миндаля на площади более 10 000 гектаров, планируется использовать новые научные и экспериментальные возможности для увеличения объемов производства данной продукции в Узбекистане.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <figure class="ag-ws-img">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% include 'blocks/footer_ru.html' %}
+{% endblock %}
