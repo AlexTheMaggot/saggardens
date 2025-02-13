@@ -1,7 +1,7 @@
 import requests
 from django.shortcuts import render, redirect, get_object_or_404
 from saggardens.config import *
-from .models import Garden, Photo, Post, Category, Product
+from .models import Garden, Photo, Post, Category, Product, Video
 
 
 def index(request):
@@ -111,6 +111,21 @@ def gallery(request):
         template = 'mainapp/gallery_uzc.html'
     else:
         template = 'mainapp/gallery_ru.html'
+    return render(request, template, context)
+
+
+def videogallery(request):
+    context = {
+        'videos': Video.objects.all()
+    }
+    if '/en/' in request.path:
+        template = 'mainapp/videogallery_en.html'
+    elif '/uzl/' in request.path:
+        template = 'mainapp/videogallery_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/videogallery_uzc.html'
+    else:
+        template = 'mainapp/videogallery_ru.html'
     return render(request, template, context)
 
 
