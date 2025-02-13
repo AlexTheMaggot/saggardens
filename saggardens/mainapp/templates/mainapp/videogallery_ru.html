@@ -1,0 +1,67 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Видеогалерея{% endblock %}
+{% block description %}Sag Gardens - Видеогалерея{% endblock %}
+{% block keywords %}Sag Gardens - Видеогалерея{% endblock %}
+
+{% block content %}
+    <!-- PRELOADER START -->
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    <!-- PRELOADER END -->
+
+    {% include 'blocks/header_ru.html' %}
+
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Видеогалерея</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_ru:index' %}">Главная</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_ru:videogallery' %}">Видеогалерея</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT START -->
+    <section>
+        <!-- BLOG GRID START -->
+        <div class="container mt-5 mb-5">
+            <div class="content-blogs">
+                <div class="row hover-effects image-hover">
+                    {% for video in videos %}
+                        <div class="col-md-6" data-aos="fade-up">
+                            <div class="blog-thumbnail">
+                                <video controls>
+                                    <source src="{{ video.video.url }}">
+                                </video>
+                                <div class="bt-caption">
+                                    <h4>{{ video.name_ru }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- BLOG GRID START -->
+    </section>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+    {% include 'blocks/footer_ru.html' %}
+    <!-- FOOTER END -->
+
+{% endblock %}
