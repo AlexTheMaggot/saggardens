@@ -31,7 +31,8 @@ class_single = [
     Photo,
     Author,
     Category,
-    Product
+    Product,
+    Video
 ]
 
 for item in class_single:
