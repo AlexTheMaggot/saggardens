@@ -11,6 +11,7 @@ urlpatterns = [
     path('gardens/<slug:garden_slug>/', views.garden_detail, name='garden_detail'),
     path('in-progress/', views.in_progress, name='in_progress'),
     path('gallery/', views.gallery, name='gallery'),
+    path('videogallery/', views.videogallery, name='videogallery'),
     path('news/', views.news_list, name='news_list'),
     path('news/<int:post_id>/', views.news_detail, name='news_detail'),
     path('products/', views.product_list, name='product_list'),
