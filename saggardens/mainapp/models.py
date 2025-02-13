@@ -79,6 +79,21 @@ class Photo(models.Model):
         verbose_name_plural = 'Галлерея'
 
 
+class Video(models.Model):
+    name_ru = models.CharField(verbose_name='Название на русском', max_length=200)
+    name_en = models.CharField(verbose_name='Название на английском', max_length=200)
+    name_uzl = models.CharField(verbose_name='Название на узбекском (лат)', max_length=200)
+    name_uzc = models.CharField(verbose_name='Название на узбекском (кир)', max_length=200)
+    video = models.FileField(upload_to='videogallery/', verbose_name='Видео (MP4 или WEBM)')
+
+    def __str__(self):
+        return self.name_ru
+
+    class Meta:
+        verbose_name = 'Видео'
+        verbose_name_plural = 'Видеогаллерея'
+
+
 class Author(models.Model):
     name_ru = models.CharField(max_length=200, verbose_name='Имя на русском')
     name_en = models.CharField(max_length=200, verbose_name='Имя на английском')
