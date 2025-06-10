@@ -190,3 +190,15 @@ def product_detail(request, product_id):
         'product': get_object_or_404(Product, id=product_id),
     }
     return render(request, template, context)
+
+
+def partners(request):
+    if '/en/' in request.path:
+        template = 'mainapp/partners_en.html' 
+    elif '/uzl/' in request.path:
+        template = 'mainapp/partners_uzl.html'
+    elif '/uzc/' in request.path:
+        template = 'mainapp/partners_uzc.html'
+    else:
+        template = 'mainapp/partners_ru.html'
+    return render(request, template)
