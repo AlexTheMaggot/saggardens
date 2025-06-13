@@ -1,0 +1,133 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Partners{% endblock %}
+{% block description %}Sag Gardens - Partners{% endblock %}
+{% block keywords %}Sag Gardens - Partners{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_en.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Partners</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_en:index' %}">Home</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_en:partners' %}">Partners</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-center">Dear partners!</h4>
+                    <p>The company “SAG AGRO LOGISTICS” under the brand SAG GARDENS invites you to become part of a dynamically developing project that unites producers of natural products around the world with reliable distribution channels in Uzbekistan and beyond.</p>
+                    <p>We build transparent, honest and profitable cooperation, where all parties win. You sell - we create demand. We grow - you earn.</p>
+                </div>
+            </div>
+            <h4 class="text-center mt-4 mb-4">KEY AREAS OF COOPERATION</h4>
+            <div class="row mb-4">
+                <div class="col-lg-7 col-mt-lg">
+                    <h6 class="">Import to Uzbekistan - Expand your sales market today</h6>
+                    <div class="bullets">
+                        <p class="mb-0"><b>We are looking for reliable partners to import the following products directly from manufacturers:</b></p>
+                        <ul class="left-list">
+                            <li>Food: organic</li>
+                            <li>Baby food and goods for children</li>
+                            <li>Natural cosmetics</li>
+                            <li>Hygiene products and detergents.</li>
+                        </ul>
+                    </div>
+                    <div class="bullets">
+                        <p class="mb-0"><b>We will provide:</b></p>
+                        <ul class="left-list">
+                            <li>Quick entry of your products to the market of Uzbekistan</li>
+                            <li>Assistance with certification (if necessary)</li>
+                            <li>Flexible and fair terms of cooperation</li>
+                            <li>Constant and predictable purchase volumes</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+                <div class="col-lg-7 col-mt-lg">
+                    <h6 class="">Export from Uzbekistan - Get the best first hand</h6>
+                    <div class="bullets">
+                        <p class="mb-0"><b>If you value quality, taste and transparency of the origin of products, you have come to the right place. SAG GARDENS offers:</b></p>
+                        <ul class="left-list">
+                            <li>Walnuts from our own gardens (in shell and peeled)</li>
+                            <li>Premium almonds from our own orchards (shelled and peeled)</li>
+                            <li>Cold pressed almond oil - food and cosmetic</li>
+                            <li>Also: figs, raisins, dried apricots, spices, dried herbs (upon request)</li>
+                        </ul>
+                    </div>
+                    <div class="bullets">
+                        <p class="mb-0"><b>We guarantee:</b></p>
+                        <ul class="left-list">
+                            <li>Full quality control "from field to packaging"</li>
+                            <li>Pure and natural product without intermediaries</li>
+                            <li>Own logistics: stable terms and low costs</li>
+                            <li>Opportunity to work under your brand name</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-7 col-mt-lg">
+                    <h6 class="">WHY “SAG GARDENS”?</h6>
+                    <div class="bullets">
+                        <p class="mb-0"><b>We have everything you need for successful and profitable cooperation:</b></p>
+                        <ul class="left-list">
+                            <li>Our own well-established logistics</li>
+                            <li>Experts in foreign economic activity</li>
+                            <li>Flexibility in packaging, volumes, prices and conditions</li>
+                            <li>A reputation built on trust and results</li>
+                            <li>Openness to exclusive contracts and special conditions</li>
+                        </ul>
+                    </div>
+                    <p><b>READY TO START?</b></p>
+                    <p>We will be happy to consider your proposal and provide samples and technical specifications.</p>
+                    <p>SAG GARDENS is not just a supply chain. It is a partnership with benefits for both parties.</p>
+                    <p>Contact us and you will get more than you expect.</p>
+                </div>
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+            </div>
+                    <br>
+                    <p><b>Contact details:</b></p>
+                    <p>📞 Phone number: +998915577770</p>
+                    <p>✉️ E-mail: sgakabirov@gmail.com</p>
+                    <br>
+                    <p>Sincerely</p>
+                    <p>Director of “SAG AGRO LOGISTICS”</p>
+                    <p>Akabirov S.G.</p>
+        </div>
+    </section>
+    {% include 'blocks/footer_en.html' %}
+{% endblock %}
