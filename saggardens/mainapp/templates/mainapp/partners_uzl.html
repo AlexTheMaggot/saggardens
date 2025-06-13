@@ -1,0 +1,133 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Sag Gardens - Hamkorlar{% endblock %}
+{% block description %}Sag Gardens - Hamkorlar{% endblock %}
+{% block keywords %}Sag Gardens - Hamkorlar{% endblock %}
+{% block content %}
+    <div id="loader-wrapper">
+        <div class="loader">
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+           <div class="ball"></div>
+        </div>
+    </div>
+    {% include 'blocks/header_uzl.html' %}
+    <div class="pages-hero">
+        <div class="container">
+            <div class="pages-title">
+                <h1>Hamkorlar</h1>
+                <div class="page-nav">
+                    <p><a href="{% url 'mainapp_uzl:index' %}">Uy</a> &nbsp; | &nbsp; <a href="{% url 'mainapp_uzl:partners' %}">Hamkorlar</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                <div class="col">
+                    <h4 class="text-center">Hurmatli hamkorlar!</h4>
+                    <p>“SAG AGRO LOGISTICS” kompaniyasi SAG GARDENS brendi ostida sizlarni butun dunyodagi tabiiy mahsulot ishlab chiqaruvchilarni O‘zbekiston va xalqaro bozorlarda ishonchli sotuv kanallari bilan bog‘lovchi jadal rivojlanayotgan loyihaga qo‘shilishga taklif qiladi.</p>
+                    <p>Biz shaffof, halol va daromadli hamkorlikni qurmoqdamiz — bunda hamma tomon foyda ko‘radi. Siz sotasiz — biz talab yaratamiz. Biz yetishtamiz — siz daromad olasiz.</p>
+                </div>
+            </div>
+            <h4 class="text-center mt-4 mb-4">HAMKORLIKNING ASOSIY YO‘NALIShLARI</h4>
+            <div class="row mb-4">
+                <div class="col-lg-7 col-mt-lg">
+                    <h6 class="">O‘zbekistonga import — mahsulotingiz uchun yangi bozor oching</h6>
+                    <div class="bullets">
+                        <p class="mb-0"><b>Biz quyidagi mahsulotlarni ishlab chiqaruvchilardan to‘g‘ridan-to‘g‘ri import qilish uchun ishonchli hamkorlarni izlayapmiz:</b></p>
+                        <ul class="left-list">
+                            <li>Oziq-ovqat mahsulotlari</li>
+                            <li>Bolalar ovqati va bolalar mahsulotlari</li>
+                            <li>Tabiiy kosmetika</li>
+                            <li>Gigiena va yuvish vositalari</li>
+                        </ul>
+                    </div>
+                    <div class="bullets">
+                        <p class="mb-0"><b>Biz tomonimizdan kafolatlanadi:</b></p>
+                        <ul class="left-list">
+                            <li>Mahsulotingizni tez va samarali ravishda O‘zbekiston bozoriga chiqarish</li>
+                            <li>Zarur bo‘lsa, sertifikatlashda yordam</li>
+                            <li>Shaffof va odil shartlarda hamkorlik</li>
+                            <li>Doimiy va prognoz qilinadigan xarid hajmlari</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+                <div class="col-lg-7 col-mt-lg">
+                    <h6 class="">O‘zbekistondan eksport — eng yaxshisini to‘g‘ridan oling</h6>
+                    <div class="bullets">
+                        <p class="mb-0"><b>Agar siz sifat, mazza va mahsulotning aniq manbasiga ahamiyat bersangiz — to‘g‘ri joydasiz. SAG GARDENS sizga taklif etadi:</b></p>
+                        <ul class="left-list">
+                            <li>Shaxsiy bog‘larimizdan grek yong‘og‘i (po‘stloqda va tozalangan)</li>
+                            <li>Premium mindal' (po‘stloqda va tozalangan)</li>
+                            <li>Sovuq siqimda olingan mindal' moyi — oziq-ovqat va kosmetika uchun</li>
+                            <li>Shuningdek: anjir, mayiz, quritilgan o‘rik, ziravorlar va quritilgan giyohlar (so‘rov asosida)</li>
+                        </ul>
+                    </div>
+                    <div class="bullets">
+                        <p class="mb-0"><b>Biz tomonimizdan kafolatlanadi:</b></p>
+                        <ul class="left-list">
+                            <li>“Daladan to qadoqlangunigacha” to‘liq sifat nazorati</li>
+                            <li>Posredniklarsiz pok va tabiiy mahsulot</li>
+                            <li>O‘z logistikamiz: barqaror yetkazib berish va past xarajatlar</li>
+                            <li>Sizning brendingiz ostida ishlash imkoniyati</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-7 col-mt-lg">
+                    <h6 class="">NEGA AYNAN “SAG GARDENS”?</h6>
+                    <div class="bullets">
+                        <p class="mb-0"><b>Bizda muvaffaqiyatli va samarali hamkorlik uchun barcha shartlar mavjud:</b></p>
+                        <ul class="left-list">
+                            <li>Yo‘lga qo‘yilgan shaxsiy logistika</li>
+                            <li>Tashqi iqtisodiy faoliyat bo‘yicha mutaxassislar</li>
+                            <li>Qadoqlash, hajm, narx va shartlarda moslashuvchanlik</li>
+                            <li>Ishonch va natijaga asoslangan obro‘</li>
+                            <li>Eksklyuziv shartnomalar va maxsus shartlarga ochiqlik</li>
+                        </ul>
+                    </div>
+                    <p><b>HAMKORLIKNI BOShLAYMIZMI?</b></p>
+                    <p>Biz sizning taklifingizni mamnuniyat bilan ko‘rib chiqamiz, namuna va texnik ma'lumotlarni taqdim etamiz.</p>
+                    <p>SAG GARDENS — bu shunchaki yetkazib berish emas. Bu ikki tomonlama daromadli hamkorlik.</p>
+                    <p>Biz bilan bog‘laning — kutganingizdan ko‘prog‘ini olasiz.</p>
+                </div>
+                <div class="col-lg-5">
+                    <figure class="agroly-about-img">
+                        <img src="{% static 'img/about_img.webp' %}" alt="">
+                    </figure>
+                </div>
+            </div>
+                    <br>
+                    <p><b>Bog‘lanish uchun ma'lumotlar:</b></p>
+                    <p>📞 Telefon: +998915577770</p>
+                    <p>✉️ Elektron pochta: sgakabirov@gmail.com</p>
+                    <br>
+                    <p>Hurmat bilan,</p>
+                    <p>“SAG AGRO LOGISTICS” direktori</p>
+                    <p>Akabirov S.G.</p>
+        </div>
+    </section>
+    {% include 'blocks/footer_uzl.html' %}
+{% endblock %}
