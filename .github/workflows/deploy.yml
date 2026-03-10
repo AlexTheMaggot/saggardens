@@ -20,7 +20,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           cd saggardens
-          echo "DJANGO_SECRET_KEY='${{ secrets.DJANGO_SECRET_KEY }}'" > saggardens/config.py
+          echo "DJANGO_SECRET_KEY='${{ secrets.DJANGO_SECRET_KEY }}' \n DJANGO_DEBUG = False" > saggardens/config.py
           python manage.py check
 
       - name: Deploy
