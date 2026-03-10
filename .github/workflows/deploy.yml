@@ -19,7 +19,7 @@ jobs:
       - name: CI check
         run: |
           cd saggardens
-          python3.8 manage.py check
+          /usr/bin/python3.8 manage.py check
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
@@ -31,6 +31,6 @@ jobs:
             cd /home/saggardens/saggardens/
             git fetch
             git pull
-            python3.8 manage.py migrate
+            /usr/bin/python3.8 manage.py migrate
             systemctl restart nginx
             systemctl restart saggardens.uz
