@@ -14,12 +14,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          python-version: "3.12"
 
       - name: CI check
         run: |
+          pip install -r requirements.txt
           cd saggardens
-          /usr/bin/python3.8 manage.py check
+          python manage.py check
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
@@ -28,9 +29,12 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/saggardens/saggardens/
+            cd /home/saggardens
             git fetch
             git pull
-            /usr/bin/python3.8 manage.py migrate
-            systemctl restart nginx
-            systemctl restart saggardens.uz
+            source venv/bin/activate
+            pip install -r requirements.txt
+            cd saggardens
+            python manage.py migrate
+            sudo systemctl restart nginx
+            sudo systemctl restart saggardens.uz
