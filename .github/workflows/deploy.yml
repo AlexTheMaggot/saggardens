@@ -1,0 +1,36 @@
+name: Django CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.6"
+
+      - name: CI check
+        run: |
+          cd saggardens
+          python manage.py check
+
+      - name: Deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/saggardens/saggardens/
+            git fetch
+            git pull
+            python manage.py migrate
+            systemctl restart nginx
+            systemctl restart saggardens.uz
